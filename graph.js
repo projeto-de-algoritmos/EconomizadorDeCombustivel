@@ -17,6 +17,18 @@ class Graph {
     this.edges[node1].push({node: node2, weight: weight});
   }
 
+  // initialize matrix
+  initialize() {
+    for(let i = 0; i < this.nodes.length; i++){
+      for(let j = 0; j < this.nodes.length; j++){
+        this.memoization[j, this.nodes[i]] = Infinity;
+      }
+    }
+    for(let i = 0; i < this.nodes.length; i++){
+      this.memoization[i, this.target] = 0;
+    }
+  }
+
   display(){
     let graph = '';
     this.nodes.forEach(node => {
