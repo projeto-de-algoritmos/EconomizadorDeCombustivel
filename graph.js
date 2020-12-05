@@ -29,6 +29,18 @@ class Graph {
     }
   }
 
+  solution() {
+    for(let i = 1; i <= this.nodes.length - 1; i++){
+      //Para cada um dos nós(coluna).
+      // para cada vizinho. Se o que está preenchido for maior do que i-1 e o nome do vizinho
+      foreach coluna dos nós
+      //para cada vizinho. Se o que está preenchido for maior do que o i-1 e o nome do vizinho + o custo da aresta de coluna até o vizinho
+      // atualiza o valor para ficar o menor
+      m[i, nó] = m[i, nó vizinho (v-1)]
+      foreach aresta (nó, peso)
+    }
+  }
+
   display(){
     let graph = '';
     this.nodes.forEach(node => {
@@ -59,3 +71,7 @@ newGraph.addWeightedEdge('D', 'B', 1);
 newGraph.addWeightedEdge('D', 'C', 5);
 
 newGraph.display();
+
+newGraph.initialize();
+
+console.log(newGraph.memoization);
