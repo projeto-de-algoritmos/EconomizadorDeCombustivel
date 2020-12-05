@@ -19,29 +19,32 @@ class Graph {
 
   // initialize matrix
   initialize() {
-    for(let i = 0; i < this.nodes.length; i++){
-      for(let j = 0; j < this.nodes.length; j++){
-        this.memoization[j, this.nodes[i]] = Infinity;
+    for (let i = 0; i < this.nodes.length; i++) {
+      this.memoization[i] = [];
+      for (let j = 0; j < this.nodes.length; j++) {
+        this.memoization[i][this.nodes[j]] = Infinity;
       }
     }
     for(let i = 0; i < this.nodes.length; i++){
-      this.memoization[i, this.target] = 0;
+      this.memoization[i][this.target] = 0;
     }
   }
 
   solution() {
     for(let i = 1; i <= this.nodes.length - 1; i++){
-      //Para cada um dos nós(coluna).
-      // para cada vizinho. Se o que está preenchido for maior do que i-1 e o nome do vizinho
-      foreach coluna dos nós
-      //para cada vizinho. Se o que está preenchido for maior do que o i-1 e o nome do vizinho + o custo da aresta de coluna até o vizinho
-      // atualiza o valor para ficar o menor
-      m[i, nó] = m[i, nó vizinho (v-1)]
-      foreach aresta (nó, peso)
+      this.nodes.forEach(node => {
+        this.memoization[i][node] = this.memoization[i][node - 1];
+        this.edges[node].forEach(({neighbor, weight}) => {
+          if (this.memoization[i][node] > this.memoization[i - 1][neighbor] + weight){
+            this.memoization[i][node] = this.memoization[i - 1][neighbor] + weight;
+            this.next[node] = neighbor;
+          }
+        })
+      });
     }
   }
 
-  display(){
+  displayGraph(){
     let graph = '';
     this.nodes.forEach(node => {
       graph += node + ' -> ' + this.edges[node].map(i => (`[${i.node}, ${i.weight}]`))
@@ -70,8 +73,9 @@ newGraph.addWeightedEdge('E', 'D', -3);
 newGraph.addWeightedEdge('D', 'B', 1);
 newGraph.addWeightedEdge('D', 'C', 5);
 
-newGraph.display();
+newGraph.displayGraph();
 
 newGraph.initialize();
+// newGraph.solution();
 
 console.log(newGraph.memoization);
