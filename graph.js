@@ -21,8 +21,11 @@ class Graph {
   initialize() {
     for (let i = 0; i < this.nodes.length; i++) {
       this.memoization[i] = [];
+      this.next[i] = [];
       for (let j = 0; j < this.nodes.length; j++) {
         this.memoization[i][this.nodes[j]] = Infinity;
+        this.next[i][this.nodes[j]] = null;
+
       }
     }
     for(let i = 0; i < this.nodes.length; i++){
@@ -32,12 +35,12 @@ class Graph {
 
   solution() {
     for(let i = 1; i <= this.nodes.length - 1; i++){
-      this.nodes.forEach(node => {
-        this.memoization[i][node] = this.memoization[i][node - 1];
-        this.edges[node].forEach(({neighbor, weight}) => {
-          if (this.memoization[i][node] > this.memoization[i - 1][neighbor] + weight){
-            this.memoization[i][node] = this.memoization[i - 1][neighbor] + weight;
-            this.next[node] = neighbor;
+      this.nodes.forEach(currentNode => {
+        // this.memoization[i][node] = this.memoization[i][node - 1];
+        this.edges[currentNode].forEach(({node, weight}) => {
+          if (this.memoization[i][currentNode] > this.memoization[i - 1][node] + weight){
+            this.memoization[i][currentNode] = this.memoization[i - 1][node] + weight;
+            this.next[i][currentNode] = node;
           }
         })
       });
@@ -73,9 +76,14 @@ newGraph.addWeightedEdge('E', 'D', -3);
 newGraph.addWeightedEdge('D', 'B', 1);
 newGraph.addWeightedEdge('D', 'C', 5);
 
+console.log('GRAPH:')
 newGraph.displayGraph();
 
 newGraph.initialize();
-// newGraph.solution();
+newGraph.solution();
 
+console.log('MEMOIZATION:');
 console.log(newGraph.memoization);
+
+console.log('SUCESSOR:');
+console.log(newGraph.next);
