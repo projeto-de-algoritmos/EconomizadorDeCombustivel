@@ -5,6 +5,7 @@ class Graph {
     this.edges = {};
     this.memoization = [];
     this.next = [];
+    this.start = 'A';
     this.target = 'D';
   }
 
@@ -25,7 +26,6 @@ class Graph {
       for (let j = 0; j < this.nodes.length; j++) {
         this.memoization[i][this.nodes[j]] = Infinity;
         this.next[i][this.nodes[j]] = null;
-
       }
     }
     for(let i = 0; i < this.nodes.length; i++){
@@ -36,7 +36,6 @@ class Graph {
   solution() {
     for(let i = 1; i <= this.nodes.length - 1; i++){
       this.nodes.forEach(currentNode => {
-        // this.memoization[i][node] = this.memoization[i][node - 1];
         this.edges[currentNode].forEach(({node, weight}) => {
           if (this.memoization[i][currentNode] > this.memoization[i - 1][node] + weight){
             this.memoization[i][currentNode] = this.memoization[i - 1][node] + weight;
@@ -56,6 +55,36 @@ class Graph {
 
     console.log(graph);
   }
+
+  showSolution(){
+    console.log('Custo total: ', this.memoization[this.nodes.length - 1][this.start]);
+
+    var sucessor = this.next[this.nodes.length - 1][this.start];
+    var path = `${this.start}`;
+    while(sucessor !== null){
+      path += ` -> ${sucessor}`;
+      sucessor = this.next[this.nodes.length - 1][sucessor];
+    }
+
+    console.log(path);
+  }
+
+  showAllSolutions(){
+    this.nodes.forEach(node => {
+      console.log('Custo total: ', this.memoization[this.nodes.length - 1][node]);
+
+      var sucessor = this.next[this.nodes.length - 1][node];
+      var path = `${node}`;
+      while(sucessor !== null){
+        path += ` -> ${sucessor}`;
+        sucessor = this.next[this.nodes.length - 1][sucessor];
+      }
+
+      console.log(path);
+    });
+  }
+
+
 
 }
 
@@ -82,8 +111,16 @@ newGraph.displayGraph();
 newGraph.initialize();
 newGraph.solution();
 
-console.log('MEMOIZATION:');
-console.log(newGraph.memoization);
+// console.log('MEMOIZATION:');
+// console.log(newGraph.memoization);
 
-console.log('SUCESSOR:');
-console.log(newGraph.next);
+// console.log('SUCESSOR:');
+// console.log(newGraph.next);
+
+console.log('SOLUTION:');
+newGraph.showSolution();
+
+console.log(`\n`)
+
+console.log('ALL SOLUTIONS:');
+newGraph.showAllSolutions();
