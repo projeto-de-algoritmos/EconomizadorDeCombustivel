@@ -105,22 +105,39 @@ newGraph.addWeightedEdge('E', 'D', -3);
 newGraph.addWeightedEdge('D', 'B', 1);
 newGraph.addWeightedEdge('D', 'C', 5);
 
+const allNodes = [
+  'A', 'B', 'C', 'D', 'E',
+  'F', 'G', 'H', 'I', 'J', 
+  'K', 'L', 'M', 'N', 'O', 
+  'P', 'Q', 'R', 'S', 'T', 
+  'U', 'V', 'W', 'X', 'Y', 
+  'Z', 'AA', 'AB', 'AC', 'AD', 
+  'AE', 'AF', 'AG', 'AH', 'AI', 
+  'AJ', 'AK', 'AL', 'AM', 'AN', 
+  'AO', 'AP', 'AQ', 'AR', 'AS', 
+  'AT', 'AU', 'AV', 'AW', 'AX', 
+  'AY', 'AZ', 'BA', 'BB', 'BC', 
+  'BD', 'BE', 'BF', 'BG', 'BH', 
+  'BI', 'BJ', 'BK', 'BL', 'BM', 
+  'BN', 'BO', 'BP', 'BQ', 'BR', 
+  'BS', 'BT', 'BU', 'BV', 'BW'];
+
 console.log('GRAPH:')
 newGraph.displayGraph();
 
 newGraph.initialize();
 newGraph.solution();
 
-// console.log('MEMOIZATION:');
-// console.log(newGraph.memoization);
+//console.log('MEMOIZATION:');
+//console.log(newGraph.memoization);
 
 // console.log('SUCESSOR:');
 // console.log(newGraph.next);
 
-console.log('SOLUTION:');
-newGraph.showSolution();
+// console.log('SOLUTION:');
+// newGraph.showSolution();
 
-console.log(`\n`)
+// console.log(`\n`)
 
-console.log('ALL SOLUTIONS:');
-newGraph.showAllSolutions();
+// console.log('ALL SOLUTIONS:');
+// newGraph.showAllSolutions();
