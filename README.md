@@ -39,6 +39,9 @@ Ou você pode executar o projeto através do CodePen. Basta acessar esse link: [
 Após a página carregar, clique em 'Console' na parte inferior esquerda e o resultado do algoritmo será mostrado.
 
 ## Uso 
+
+Vídeo de explicação está na pasta assets<br>
+
 Para utilizar, basta executar o projeto. Caso queira trocar o ponto de partida ou destino, você pode realizar isso através das variáveis _'start'_ e _'target'_.
 
 
