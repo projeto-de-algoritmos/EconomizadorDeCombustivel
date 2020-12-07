@@ -24,22 +24,22 @@ Já as estradas detectadas como **descidas(verder)** possuem um custo de _-2_ pa
 
 ## Screenshots
 <p align="center">
-  <img alt="Grafo"  src="https://github.com/twistershark/Final_Score/blob/master/assets/grafo.png" />
+  <img alt="Grafo"  src="https://github.com/twistershark/Final_EconomizadorDeCombust-vel/blob/master/assets/grafo.png.png" />
 
-  <img alt="Solução 1"  src="https://github.com/twistershark/Final_Score/blob/master/assets/solucao1.png" />
+  <img alt="Solução 1"  src="https://github.com/twistershark/Final_EconomizadorDeCombust-vel/blob/master/assets/solucao1.png.png" />
 
-  <img alt="Solução 2"  src="https://github.com/twistershark/Final_Score/blob/master/assets/solucao2.png" />
+  <img alt="Solução 2"  src="https://github.com/twistershark/Final_EconomizadorDeCombust-vel/blob/master/assets/solucao2.png.png" />
 </p>
 
 ## Instalação 
 **Linguagem**: JavaScript<br>
 É necessário o NodeJS instalado para executar o projeto.<br>
 
-Ou você pode executar o projeto através do CodePen. Basta acessar esse link: [CodePen - Projeto Final](https://codepen.io/twistershark/pen/XWjdGdL)
+Ou você pode executar o projeto através do CodePen. Basta acessar esse link: [CodePen - Projeto Final](https://codepen.io/twistershark/pen/XWjdGdL)<br>
 Após a página carregar, clique em 'Console' na parte inferior esquerda e o resultado do algoritmo será mostrado.
 
 ## Uso 
-Para utilizar, basta executar o projeto. Caso queira trocar o ponto de partida ou destino, você pode realizar isso através das variáveis 'start' e 'target'.
+Para utilizar, basta executar o projeto. Caso queira trocar o ponto de partida ou destino, você pode realizar isso através das variáveis _'start'_ e _'target'_.
 
 
 
