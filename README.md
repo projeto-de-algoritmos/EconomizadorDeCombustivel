@@ -24,11 +24,11 @@ Já as estradas detectadas como **descidas(verder)** possuem um custo de _-2_ pa
 
 ## Screenshots
 <p align="center">
-  <img alt="Grafo"  src="https://github.com/twistershark/Final_EconomizadorDeCombustivel/blob/master/assets/grafo.png" />
+  <img alt="Grafo"  src="https://github.com/projeto-de-algoritmos/EconomizadorDeCombustivel/blob/master/assets/grafo.png" />
 
-  <img alt="Solução 1"  src="https://github.com/twistershark/Final_EconomizadorDeCombustivel/blob/master/assets/solucao1.png" />
+  <img alt="Solução 1"  src="https://github.com/projeto-de-algoritmos/EconomizadorDeCombustivel/blob/master/assets/solucao1.png" />
 
-  <img alt="Solução 2"  src="https://github.com/twistershark/Final_EconomizadorDeCombustivel/blob/master/assets/solucao2.png" />
+  <img alt="Solução 2"  src="https://github.com/projeto-de-algoritmos/EconomizadorDeCombustivel/blob/master/assets/solucao2.png" />
 </p>
 
 ## Instalação 
