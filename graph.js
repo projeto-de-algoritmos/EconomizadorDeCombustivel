@@ -5,7 +5,9 @@ class Graph {
     this.edges = {};
     this.memoization = [];
     this.next = [];
+    // Troque o Start para alterar o ponto de partida
     this.start = 'A';
+    // Troque o target para alterar o ponto de destino
     this.target = 'BW';
   }
 
@@ -34,6 +36,9 @@ class Graph {
   }
 
   solution() {
+    console.log('START: ', this.start);
+    console.log('END: ', this.target);
+
     for(let i = 1; i <= this.nodes.length - 1; i++){
       this.nodes.forEach(currentNode => {
         this.edges[currentNode].forEach(({node, weight}) => {
@@ -57,7 +62,7 @@ class Graph {
   }
 
   showSolution(){
-    console.log('Custo total: ', this.memoization[this.nodes.length - 1][this.start]);
+    // console.log('Custo total: ', this.memoization[this.nodes.length - 1][this.start]);
 
     var sucessor = this.next[this.nodes.length - 1][this.start];
     var path = `${this.start}`;
@@ -243,16 +248,9 @@ newGraph.addWeightedEdge('BU', 'BW', 1);
 newGraph.initialize();
 newGraph.solution();
 
-console.log('MEMOIZATION:');
-console.log(newGraph.memoization);
+console.log('SOLUTION:');
+newGraph.showSolution();
 
-// console.log('SUCESSOR:');
-// console.log(newGraph.next);
-
-// console.log('SOLUTION:');
-// newGraph.showSolution();
-
-// console.log(`\n`)
-
+// Mostra a solução de cada nó até o nó final
 // console.log('ALL SOLUTIONS:');
 // newGraph.showAllSolutions();
